@@ -1,0 +1,75 @@
+.session {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--cold);
+    padding: 80px 20px 20px 20px;
+}
+
+.session-form {
+    background-color: var(--cole);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--colf);
+}
+
+.session-form h2 {
+    color: var(--colg);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid var(--colb);
+    background-color: var(--cole);
+    color: var(--colg);
+    outline: none;
+    font-size: 16px;
+    border-radius: 4px 4px 0 0;
+}
+
+.input-group input::placeholder {
+    color: var(--colh);
+}
+
+.session-btn {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.session-btn:hover {
+    filter: brightness(0.9);
+}
+
+.session-toggle {
+    color: var(--colg);
+    text-align: center;
+    font-size: 14px;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--colb);
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.link-btn:hover {
+    color: var(--colc);
+}

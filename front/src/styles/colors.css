@@ -1,0 +1,20 @@
+:root {
+  --cola: #265120;
+  --colb: #69C34E;
+  --colc: #B2FF59;
+
+  --cold: #0B0F0C;
+  --cole: #151A16;
+  --colf: #1E2420;
+
+  --colg: #F5F7F5;
+  --colh: #7C8A80;
+}
+
+.cola {
+  color: var(--cola);
+}
+
+.colb {
+  color: var(--colb);
+}

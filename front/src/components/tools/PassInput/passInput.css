@@ -1,0 +1,29 @@
+.passInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--colb);
+    background-color: var(--cole);
+    padding: 3px;
+    border-radius: 4px 4px 0 0;
+}
+
+.passInput input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px 0;
+}
+
+.strength-bar {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.passInput svg {
+    cursor: pointer;
+}

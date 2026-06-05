@@ -1,0 +1,10 @@
+.btnA {
+    background-color: var(--colb);
+    color: var(--cold);
+    transition: .3s ease-in-out;
+    height: 40px;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
+}
