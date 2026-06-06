@@ -7,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #101217;
+  background: linear-gradient(135deg, #101217 0%, #1a1d26 100%);
 }
 
 html, body {

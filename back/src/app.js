@@ -6,7 +6,7 @@ import cors from 'cors';
 import env from './config/env.config.js';
 import cookieParser from 'cookie-parser';
 
-import { sessionRouter } from './routes/index.router.js';
+import { sessionRouter, testRouter, teamsRouter, groupsRouter, gamesRouter } from './routes/index.router.js';
 
 const app = express();
 mongoDB();
@@ -20,5 +20,9 @@ initializePassport();
 app.use(passport.initialize());
 
 app.use('/api/session', sessionRouter);
+app.use('/api/test', testRouter);
+app.use('/api/teams', teamsRouter);
+app.use('/api/groups', groupsRouter);
+app.use('/api/games', gamesRouter);
 
 app.listen(env.port, async () => console.log(`Server conected ${env.port}`));

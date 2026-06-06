@@ -10,6 +10,7 @@ const Navbar = () => {
 
     const [showNav, setShowNav] = useState(true);
     const [startLocation, setStartLocation] = useState(0);
+    const [isTop, setIsTop] = useState(true);
 
     useEffect(() => { current() }, []);
 
@@ -18,6 +19,7 @@ const Navbar = () => {
             const currentScroll = window.pageYOffset;
             currentScroll > startLocation ? setShowNav(false) : setShowNav(true);
             setStartLocation(currentScroll);
+            setIsTop(currentScroll < 10);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -30,7 +32,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='navBar' style={navStyle}>
+        <div className={`navBar ${isTop ? 'navBar--top' : ''}`} style={navStyle}>
 
             <section className='navBarLog' onClick={() => navigate('/')}>
                 <img src="/logo.webp" alt="logo" />
@@ -39,13 +41,17 @@ const Navbar = () => {
 
             <section className='navBarSect'>
                 <p>Partidos</p>
-                <p>Reglas</p>
-
                 {user.logged
-                    ? <p>Mis predicciones</p>
-                    : <button className='btn btnA' onClick={() => navigate('/user/session')}>
-                        Entrar
-                    </button>
+                    ? <>
+                        <p>Mi Perfil</p>
+                        <p>Mis predicciones</p>
+                    </>
+                    : <>
+                        <p>Reglas</p>
+                        <button className='btn btnA' onClick={() => navigate('/user/session')}>
+                            Entrar
+                        </button>
+                    </>
                 }
             </section>
 

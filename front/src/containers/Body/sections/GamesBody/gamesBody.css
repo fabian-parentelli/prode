@@ -1,0 +1,25 @@
+.games-body {
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.games-body-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--colg);
+}
+
+.games-body-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.games-body-empty {
+    text-align: center;
+    color: var(--colh);
+    font-size: 1rem;
+    padding: 2rem;
+}

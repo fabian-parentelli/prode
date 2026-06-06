@@ -5,6 +5,13 @@
     height: 40px;
 }
 
+.btnB {
+    background-color: var(--colg);
+    color: var(--cold);
+    transition: .3s ease-in-out;
+    height: 40px;
+}
+
 .btn:hover {
     filter: brightness(0.9);
 }

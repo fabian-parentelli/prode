@@ -4,6 +4,12 @@ import env from '../config/env.config.js';
 
 const isDev = env.environment === 'development';
 
+const logout = async (req, res) => {
+    res.clearCookie('prode_accessToken', { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'none' });
+    res.clearCookie('prode_refreshToken', { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'none' });
+    res.sendSuccess({ status: 'success' });
+};
+
 const postSession = async (req, res) => {
     try {
         const { accessToken, refreshToken, result } = await service.postSession({ ...req.body });
@@ -42,4 +48,4 @@ const getCurrent = async (req, res) => {
     };
 };
 
-export { postSession, postRefresh, getCurrent };
+export { postSession, postRefresh, getCurrent, logout };

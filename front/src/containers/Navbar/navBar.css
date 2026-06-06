@@ -13,6 +13,10 @@
     padding: 0 2rem;
 }
 
+.navBar.navBar--top {
+    background-color: transparent;
+}
+
 .navBar .navBarLog {
     display: flex;
     align-items: center;
