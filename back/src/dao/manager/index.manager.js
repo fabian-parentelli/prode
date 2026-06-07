@@ -3,9 +3,11 @@ import Teams from './teams.manager.js';
 import Stadiums from './stadiums.manager.js';
 import Groups from './groups.manager.js';
 import Games from './games.manager.js';
+import Predictions from './predictions.manager.js';
 
 export const userManager = new User();
 export const teamsManager = new Teams();
 export const stadiumsManager = new Stadiums();
 export const groupsManager = new Groups();
 export const gamesManager = new Games();
+export const predictionsManager = new Predictions();

@@ -5,9 +5,9 @@ import { useAlertContext } from '@/context/AlertContext.jsx';
 import MatchCard from '@/components/tools/MatchCard/MatchCard.jsx';
 
 const GamesBody = () => {
-    
+
     const { showAlert } = useAlertContext();
-    
+
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -24,17 +24,14 @@ const GamesBody = () => {
         const today = new Date();
         const first = new Date('2026-06-11T00:00:00');
         const last = new Date('2026-07-19T00:00:00');
-
-        if (today < first) {
-            return '06/11/2026';
-        } else if (today > last) {
-            return '07/19/2026';
-        } else {
+        if (today < first) return '06/11/2026';
+        else if (today > last) return '07/19/2026';
+        else {
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const dd = String(today.getDate()).padStart(2, '0');
             const yyyy = today.getFullYear();
             return `${mm}/${dd}/${yyyy}`;
-        }
+        };
     }, []);
 
     const filteredGames = useMemo(() => {
@@ -47,17 +44,16 @@ const GamesBody = () => {
 
     return (
         <div className="games-body">
+
             <h3 className="games-body-title">Partidos del día</h3>
 
             <div className="games-body-list">
-                {filteredGames.length === 0 ? (
-                    <p className="games-body-empty">No hay partidos para esta fecha.</p>
-                ) : (
-                    filteredGames.map(game => (
-                        <MatchCard key={game._id} game={game} />
-                    ))
-                )}
+                {filteredGames.length === 0
+                    ? <p className="games-body-empty">No hay partidos para esta fecha.</p>
+                    : filteredGames.map(game => (<MatchCard key={game._id} game={game} />))
+                }
             </div>
+
         </div>
     );
 };

@@ -12,9 +12,4 @@ export default class StadiumsRepository {
         return result;
     };
 
-    postManyStadiums = async (stadiums) => {
-        const result = await stadiumsManager.postManyStadiums(stadiums);
-        return result;
-    };
-
 };

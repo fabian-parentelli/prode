@@ -2,6 +2,7 @@ import './body.css';
 import { useNavigate } from 'react-router-dom';
 import StatsSection from './sections/StatsSection/StatsSection.jsx';
 import GamesBody from './sections/GamesBody/GamesBody.jsx';
+import GroupsBody from './sections/GroupsBody/GroupsBody.jsx';
 import CountdownCard from '@/components/CountdownCard/CountdownCard.jsx';
 
 const Body = () => {
@@ -26,8 +27,8 @@ const Body = () => {
 
             <StatsSection />
             <CountdownCard />
-            
             <GamesBody />
+            <GroupsBody />
         </div>
     );
 };

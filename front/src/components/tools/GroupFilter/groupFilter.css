@@ -1,0 +1,30 @@
+.groups-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--colf);
+    border-radius: 4px;
+    background: var(--cole);
+    color: var(--colg);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover {
+    background: var(--colf);
+    border-color: var(--colb);
+}
+
+.filter-btn.active {
+    background: var(--colb);
+    color: var(--cold);
+    border-color: var(--colb);
+    font-weight: 600;
+}

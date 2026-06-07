@@ -21,10 +21,11 @@ const StatsSection = () => {
                 <span className="stat-number">104</span>
                 <span className="stat-label">Partidos</span>
             </div>
-            <div className="stat-item">
+            <div className="stat-item" onClick={() => navigate('/stadiums')}>
                 <span className="stat-number">16</span>
                 <span className="stat-label">Estadios</span>
             </div>
+            
         </section>
     );
 };

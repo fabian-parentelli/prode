@@ -1,4 +1,5 @@
 const groupsDto = (groups, teams) => {
+
     const teamsMap = new Map(teams.map(team => [team.id, team]));
 
     return groups.map(group => ({
@@ -12,6 +13,7 @@ const groupsDto = (groups, teams) => {
             };
         }),
     }));
+
 };
 
 export { groupsDto };

@@ -1,6 +1,7 @@
 .games {
     padding: 70px 2rem 2rem 2rem;
     max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     min-height: 100vh;
 }
@@ -55,6 +56,7 @@
 .games-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -66,7 +68,10 @@
 }
 
 @media (max-width: 600px) {
+
     .games {
+        margin-top: 50px;
         padding: 1rem;
+        
     }
 }

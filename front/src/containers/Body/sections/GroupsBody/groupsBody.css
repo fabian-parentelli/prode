@@ -1,0 +1,20 @@
+.groupsBody {
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.groupsBody-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--colg);
+}
+
+.groupsBody-empty {
+    text-align: center;
+    color: var(--colh);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}

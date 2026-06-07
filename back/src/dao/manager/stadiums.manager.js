@@ -10,8 +10,4 @@ export default class Stadiums {
         return await stadiumsModel.findOne(query, get).lean();
     };
 
-    postManyStadiums = async (stadiums) => {
-        return await stadiumsModel.insertMany(stadiums);
-    };
-
 };

@@ -7,6 +7,8 @@ import Teams from "../containers/layouts/Teams/Teams.jsx";
 import Groups from "../containers/layouts/Groups/Groups.jsx";
 import Games from "../containers/layouts/Games/Games.jsx";
 import Body from "../containers/Body/Body.jsx";
+import Stadiums from "../containers/layouts/Stadiums/Stadiums.jsx";
+import Predictions from "../containers/layouts/Predictions/Predictions.jsx";
 
 const Router = () => {
 
@@ -22,6 +24,8 @@ const Router = () => {
                     <Route path='/teams' element={<Teams />} />
                     <Route path='/groups' element={<Groups />} />
                     <Route path='/games' element={<Games />} />
+                    <Route path='/stadiums' element={<Stadiums />} />
+                    <Route path='/prediction' element={<Predictions />} />
                 </Routes>
 
             </ScrollToTop>

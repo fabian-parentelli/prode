@@ -15,7 +15,7 @@ const postSession = async (req, res) => {
         const { accessToken, refreshToken, result } = await service.postSession({ ...req.body });
         const oneYear = 365 * 24 * 60 * 60 * 1000;
         const thirtyMinutes = 30 * 60 * 1000;
-        res.cookie('prode_accessToken', accessToken, { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'strict', maxAge: thirtyMinutes });
+        res.cookie('prode_accessToken', accessToken, { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'strict', maxAge: oneYear });
         res.cookie('prode_refreshToken', refreshToken, { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'strict', maxAge: oneYear });
         return res.sendSuccess({ status: 'success', result });
     } catch (error) {
@@ -25,12 +25,12 @@ const postSession = async (req, res) => {
 };
 
 const postRefresh = async (req, res) => {
-    const refreshToken = req.cookies.refreshToken;
+    const refreshToken = req.cookies['prode_refreshToken'];
     if (!refreshToken) return res.status(401).send({ error: 'No token' });
     try {
         const result = await service.postRefresh(refreshToken);
-        const thirtyMinutes = 30 * 60 * 1000;
-        res.cookie('accessToken', result, { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'strict', maxAge: thirtyMinutes });
+        const oneYear = 365 * 24 * 60 * 60 * 1000;
+        res.cookie('prode_accessToken', result, { httpOnly: true, secure: !isDev, sameSite: isDev ? 'lax' : 'strict', maxAge: oneYear });
         if (result) return res.sendSuccess({ status: 'success' });
     } catch (error) {
         if (error instanceof CustomNotFound) return res.status(401).send({ error: error.message });

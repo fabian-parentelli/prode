@@ -8,9 +8,9 @@ const Navbar = () => {
     const { user, current } = useLoginContext();
     const navigate = useNavigate();
 
+    const [isTop, setIsTop] = useState(true);
     const [showNav, setShowNav] = useState(true);
     const [startLocation, setStartLocation] = useState(0);
-    const [isTop, setIsTop] = useState(true);
 
     useEffect(() => { current() }, []);
 
@@ -40,11 +40,11 @@ const Navbar = () => {
             </section>
 
             <section className='navBarSect'>
-                <p>Partidos</p>
+                <p onClick={() => navigate('/games')}>Partidos</p>
                 {user.logged
                     ? <>
                         <p>Mi Perfil</p>
-                        <p>Mis predicciones</p>
+                        <p onClick={() => navigate('/prediction')}>Predicciones</p>
                     </>
                     : <>
                         <p>Reglas</p>
